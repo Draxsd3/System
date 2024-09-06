@@ -1,0 +1,28 @@
+        /* Estilo para a navbar fixa */
+        .navbar-fixed {
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Adiciona padding para o conteúdo não ficar escondido atrás da navbar */
+        .content {
+            padding-top: 80px;
+            min-height: calc(100vh - 160px); /* Ajusta o conteúdo para que o footer fique no fim da página */
+        }
+
+        /* Estilo para o botão de voltar */
+        .btn-voltar {
+            bottom: 20px;
+            left: 20px;
+        }
+
+        /* Estilo para o footer fixo */
+        footer {
+            margin-top: 50px
+            ;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 1000;
+        }

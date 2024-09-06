@@ -1,0 +1,101 @@
+/* Estilo geral do corpo */
+body {
+    padding-top: 56px;
+    /* Ajuste para compensar a navbar fixa */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Garante que o conteúdo ocupe a altura total da tela */
+    margin: 0;
+}
+
+/* Conteúdo principal */
+.container {
+    padding-bottom: 60px;
+    /* Espaço para o footer */
+}
+
+/* Estilo para o footer */
+.footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+    width: 100%;
+}
+
+/* Estilo para reduzir a largura da coluna de ações */
+.table .col-actions {
+    width: 120px;
+    /* Define uma largura fixa para a coluna de ações */
+}
+
+/* Estilo para botões na tabela */
+.table .btn {
+    padding: 4px 8px;
+    /* Reduz o padding dos botões */
+    font-size: 0.85rem;
+    /* Diminui o tamanho da fonte */
+}
+
+/* Estilo para mensagens de alerta */
+.alert-dismissible {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1051;
+    /* Garante que a mensagem esteja acima de outros elementos */
+}
+
+/* Navbar fixa */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030;
+}
+
+/* Estilos adicionais para o modal */
+.modal-content {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header,
+.modal-footer {
+    border-bottom: 1px solid #dee2e6;
+    border-top: 1px solid #dee2e6;
+}
+
+/* Estilo para os ícones dos botões */
+.nav-link img,
+.btn i {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-link:hover img,
+.btn:hover i {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Define uma altura customizada para os botões */
+.button-custom-height {
+    height: 36px;
+    /* Ajuste o valor conforme necessário */
+    line-height: 1.5;
+    /* Ajusta o espaçamento interno para centralizar o texto */
+    padding: 4px 8px;
+    /* Ajusta o padding para manter o tamanho do botão adequado */
+    display: inline-flex;
+    /* Garante que o ícone e o texto fiquem em linha */
+    align-items: center;
+    /* Centraliza o conteúdo verticalmente */
+}
+
+/* Margem à direita para o ícone */
+.button-custom-height i {
+    margin-right: 4px;
+    /* Adiciona espaço entre o ícone e o texto */
+}

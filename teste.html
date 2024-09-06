@@ -1,0 +1,80 @@
+DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Controle da Bomba de Gasolina</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .chart-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: auto;
+        }
+
+        .chart-container canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .chart-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-4">
+        <h2>Controle da Bomba de Gasolina</h2>
+        <div class="chart-container">
+            <canvas id="chartCanvas"></canvas>
+            <img src="https://img.icons8.com/glyph-neue/64/gas-station.png" id="bombaImage" alt="Bomba de Gasolina" />
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('chartCanvas').getContext('2d');
+        const bombaImage = document.getElementById('bombaImage');
+
+        // Configure o gráfico
+        const chart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                datasets: [{
+                    data: [50, 50], // Exemplos de dados: 50% preenchido e 50% restante
+                    backgroundColor: ['orange', 'transparent'],
+                    borderColor: 'transparent',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                cutoutPercentage: 70, // Ajuste para criar um gráfico de anel
+                animation: {
+                    duration: 0 // Desativa animações
+                },
+                plugins: {
+                    datalabels: {
+                        display: false
+                    }
+                }
+            }
+        });
+
+        function updateChart(value) {
+            // Atualize os dados do gráfico com base no valor
+            chart.data.datasets[0].data = [value, 100 - value];
+            chart.update();
+        }
+
+        // Exemplo de chamada da função para atualizar o gráfico com 75%
+        updateChart(75);
+    </script>
+</body>
+
+</html>
